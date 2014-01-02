@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta
+	content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no"
+	name="viewport" />
+<title></title>
+<link rel="Stylesheet" href="icons/icons.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="page" style="padding-bottom:0px ! important;">
+		<div data-role="header" data-position="fixed">
+			<h1>Results</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="results_list">
+			</ul>
+		</div>
+		<div data-id="footer" data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a class="info" href="info.htm" data-icon="custom">Info</a></li>
+					<li><a class="timetable" href="timetable.htm"
+						data-icon="custom" data-ajax="false">Timetable</a></li>
+					<li><a class="results ui-btn-active ui-state-persist"
+						href="results.htm" data-icon="custom"> Results</a></li>
+					<li><a class="map" href="map.htm" data-icon="custom"
+						data-ajax="false">Map</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="./scripts/dal.js"></script>
+		<script src="./scripts/ICanHaz.js"></script>
+		<script src="./scripts/results.js"></script>
+
+		<script id="repeat" type="text/html">
+	{{#results.terms}}
+	<li data-role="list-divider" role="heading">
+	  {{value}}
+	  <p><em>{{subject_area.description}}</em></p>
+	</li>      
+	{{#papers}}
+	<li>
+	  <h2>{{subject_area.description}}</h2>
+	  <p><em>{{ mark }} / {{out_of}}</em></p>
+	  <p><strong>{{number}} in year</strong></p>
+	</li>
+	{{/papers}}
+	{{/results.terms}}
+      </script>
+		<script>
+			$('#page').live('pageinit', function(event) {
+				dataRequest.getExamResults(function(d) {
+					var data = results.genResults(d);
+					var exams = ich.repeat(data);
+					$('#results_list').empty(); // clear previous data
+					$('#results_list').append(exams);
+					$('#results_list').listview('refresh');
+					$('#page').page();
+				});
+			});
+		</script>
+	</div>
+	<script
+		src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+</body>
+</html>

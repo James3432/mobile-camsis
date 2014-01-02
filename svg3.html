@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>SVG Rendering | Fabric.js Demos</title>
+
+    <script src="fabric.js"></script>
+	<script>
+  function initCanvas(id) {
+    var canvas;
+    fabric.loadSVGFromURL('test.svg', function(objects, options) {
+      var shape = toShape(objects, options);
+      
+      var canvasEl = document.getElementById('c' + id);
+      
+      canvasEl.width = shape.width || 600;
+      canvasEl.height = shape.height || 600;
+      
+      var iframeEl = canvasEl.parentNode.nextSibling.childNodes[1];
+      if (iframeEl) {
+        iframeEl.style.width = canvasEl.width + 'px';
+        iframeEl.style.height = canvasEl.height + 'px';
+      }
+      
+      canvas = window['__canvas' + id] = new fabric.Canvas('c' + id, { selection: false });
+      
+      canvas.add(shape).centerObjectH(shape).centerObjectV(shape).renderAll();
+      shape.setCoords();
+      canvas.calcOffset();
+    });
+  }
+  
+   initCanvas(1);
+ </script>
+<div><canvas id="c1" width="600" height="600"></canvas></div>
+	   </body>
+</html>
+	  
+	 

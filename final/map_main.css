@@ -1,0 +1,166 @@
+.smallmap {   
+    border: 1px solid #ccc;
+}
+#tags {
+    display: none;
+}
+
+#docs p {
+    margin-bottom: 0.5em;
+}
+/* mobile specific */
+@media only screen and (max-width: 600px) {
+    body {
+        height           : 100%;
+        margin           : 0;
+        padding          : 0;
+        width            : 100%;
+    }
+    #map {
+        background : #ffffff;
+        width      : 100%;
+    }
+    #map {
+        border : 0;
+        height : 250px;
+    }
+    #title {
+        font-size   : 1.3em;
+        line-height : 2em;
+        text-indent : 1em;
+        margin      : 0;
+        padding     : 0;
+    }
+    #docs {
+        bottom     : 0;
+        padding    : 1em;
+    }
+    #shortdesc {
+        color      : #aaa;
+        font-size  : 0.8em;
+        padding    : 1em;
+        text-align : right;
+    }
+    #tags {
+        display : none;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 600px) {
+    #shortdesc {
+       float: right;
+       width: 25%;
+    }
+    #map {
+        width: 70%;
+    }
+    #docs {
+        font-size: 12px;
+    }
+}
+body {
+    -webkit-text-size-adjust: none;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.olControlAttribution {
+	font-size: 10px;
+	bottom: 5px;
+	right: 5px;
+}
+
+div.olControlZoomPanel {
+	height: 108px;
+	width: 36px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+div.olControlZoomPanel div {
+	width: 36px;
+	height: 36px;
+	background-image: url(img/mobile-zoombar.png);
+	left: 0;
+}
+
+div.olControlZoomPanel .olControlZoomInItemInactive {
+	top: 0;
+	background-position: 0 0;
+}
+
+div.olControlZoomPanel .olControlZoomToMaxExtentItemInactive {
+	top: 36px;
+	background-position: 0 -36px;
+}
+
+div.olControlZoomPanel .olControlZoomOutItemInactive {
+	top: 72px;
+	background-position: 0 -72px;
+}
+
+.olTileImage {
+	-webkit-transition: opacity 0.2s linear;
+	-moz-transition: opacity 0.2s linear;
+	-o-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
+}
+
+div.olControlZoomPanel .olControlZoomInItemInactive,div.olControlZoomPanel .olControlZoomOutItemInactive
+	{
+	background: rgba(0, 0, 0, 0.2);
+	position: absolute;
+}
+
+div.olControlZoomPanel .olControlZoomInItemInactive {
+	border-radius: 5px 5px 0 0;
+}
+
+div.olControlZoomPanel .olControlZoomOutItemInactive {
+	border-radius: 0 0 5px 5px;
+	top: 37px;
+}
+
+div.olControlZoomPanel .olControlZoomOutItemInactive:after,div.olControlZoomPanel .olControlZoomInItemInactive:after
+	{
+	font-weight: bold;
+	content: '+';
+	font-size: 40px;
+	padding: 7px;
+	z-index: 2000;
+	color: #fff;
+	line-height: 0.9em;
+}
+
+div.olControlZoomPanel .olControlZoomOutItemInactive:after {
+	content: '\2013';
+	font-size: 40px;
+	line-height: 0.7em;
+	padding: 0 8px;
+}
+
+div.olControlZoomPanel .olControlZoomToMaxExtentItemInactive {
+	display: none;
+}
+
+.olControlEditingToolbar .olControlModifyFeatureItemInactive {
+	background-position: -1px -1px;
+}
+
+.olControlEditingToolbar .olControlModifyFeatureItemActive {
+	background-position: -1px -24px;
+}
+
+#title,#tags,#shortdesc {
+	display: none;
+}

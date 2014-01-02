@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta
+	content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no"
+	name="viewport" />
+<title></title>
+<link rel="Stylesheet" href="icons/icons.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="page" style="padding-bottom:0px ! important;">
+		<div data-role="header" data-position="fixed" >
+			<h1>Timetable</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="exams" >
+			</ul>
+		</div>
+		<div data-id="footer" data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a class="info" href="info.htm" data-icon="custom">Info</a></li>
+					<li><a class="timetable ui-btn-active ui-state-persist"
+						href="timetable.htm" data-icon="custom" data-ajax="false">Timetable</a></li>
+					<li><a class="results" href="results.htm" data-icon="custom">Results</a></li>
+					<li><a class="map" href="map.htm" data-icon="custom"
+						data-ajax="false">Map</a></li>
+				</ul>
+			</div>
+		</div>
+		<script src="./scripts/dal.js"></script>
+		<script src="./scripts/ICanHaz.js"></script>
+		<script src="./scripts/timetable.js"></script>
+
+
+		<script id="repeat" type="text/html">
+	{{#days}}
+	<li data-role="list-divider" role="heading">
+	  {{day}}
+	</li>      
+	{{#exams}}
+	<li>
+	  <h2>{{description}}</h2>
+	  <p><em>{{ location }}</em></p>
+	  <p><strong>{{ start_datetime }}</strong></p>
+	  <ul>
+	    <li>
+	      <h2>{{ subject_area.description }}</h2>
+	      <p>{{ description }}</p>
+	      <p><a href="map/map_main.htm" data-ajax="false"><em>{{ location }}</em></a></p>
+	      <p><strong>{{ formatted_datetime }}</strong></p>
+	    </li>
+	  </ul>
+	</li>
+	{{/exams}}
+	{{/days}}
+      </script>
+		<script>
+			$('#page').live('pageinit', function(event) {
+				dataRequest.getTimetable(function(d) {
+					var data = timetable.genTimetable(d);
+					var exams = ich.repeat(data);
+					$('#exams').empty(); // clear previous data
+					$('#exams').append(exams);
+					$('#exams').listview('refresh');
+					$('#page').page();
+				});
+			});
+			
+		</script>
+	</div>
+
+	<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	<script>
+	// hack to fix nested back button
+	$(':jqmData(url^=page)').live('pagebeforecreate', 
+	  function(event) {
+	    $(this).filter(':jqmData(url*=ui-page)').find(':jqmData(role=header)')
+	      .prepend('<a href="#" data-rel="back" data-icon="back">Back</a>')
+	  });
+	</script>	
+
+</body>
+</html>

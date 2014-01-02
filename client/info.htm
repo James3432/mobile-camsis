@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta
+	content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no"
+	name="viewport" />
+<title>Student Information</title>
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-
+rc.1.min.css" />-->
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<link rel="Stylesheet" href="icons/icons.css" />
+</head>
+<body>
+	<div data-role="page" id="page">
+		<div data-role="header" data-position="fixed">
+			<a href="index.htm">Home</a>
+			<h1>Student Info</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="studentinfo">
+			</ul>
+		</div>
+		<div data-id="footer" data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a class="info ui-btn-active ui-state-persist"
+						href="info.htm" data-icon="custom"> Info</a></li>
+					<li><a class="timetable" href="timetable.htm"
+						data-icon="custom" data-ajax="false">Timetable</a></li>
+					<li><a class="results" href="results.htm" data-icon="custom">Results</a></li>
+					<li><a class="map" href="map.htm" data-icon="custom">Map</a></li>
+				</ul>
+			</div>
+		</div>
+		<script src="./scripts/dal.js"></script>
+		<script src="./scripts/ICanHaz.js"></script>
+		<script id="infoTemplate" type="text/html">
+                <li data-role="list-divider" role="heading">Personal Details </li>
+                <li>
+                    <h3>
+                        USN (University Student Number)</h3>
+                    <p>
+                        <em>{{USN.value}}</em></p>
+                </li>
+                <li>
+                    <h3>
+                        Name</h3>
+                    <p>
+                        <em>{{name.value}}</em></p>
+                </li>
+                <li>
+                    <h3>
+                        CRSID (Common Registration Service Identifier)</h3>
+                    <p>
+                        <em>{{CRSid.value}}</em></p>
+                </li>
+        </script>
+		<script>
+		$('body').addClass('ui-loading');
+			$('#page').live('pageinit', function(event) { 
+				dataRequest.getStudentNumber(function(data) {
+					var info = ich.infoTemplate(data);
+					$('#studentinfo').empty(); // clear previous data
+					$('#studentinfo').append(info);
+					$('#studentinfo').listview('refresh');
+					$('#page').page();
+					$('body').removeClass('ui-loading');
+				}, function() {
+					$('body').removeClass('ui-loading');
+					$.mobile.changePage('login.htm', 'pop', true, true);
+				});
+			});
+		</script>
+	</div>
+	<!--<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
+
+	<!--<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-
+rc.1.min.js"></script>-->
+
+	<script
+		src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+</body>
+</html>

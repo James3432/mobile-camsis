@@ -1,0 +1,16 @@
+<html>
+<body>
+<script type="text/javascript" src="rgbcolor.js"></script> 
+<script type="text/javascript" src="canvg.js"></script> 
+<canvas id="canvas" width="1000px" height="600px"></canvas> 
+<script type="text/javascript">
+window.load = function() {
+  //load 'svg.svg' in the canvas with id = 'canvas'
+  canvg('canvas', 'http://www.srcf.ucam.org/~jk509/test.svg')
+
+  //ignore mouse events and animation
+  //canvg('canvas', 'file.svg', { ignoreMouse: true, ignoreAnimation: true }) 
+}
+</script>
+</body>
+</html>

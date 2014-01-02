@@ -1,0 +1,36 @@
+2 Options:
+
+SVG on Canvas
+
+ -- IE support?
+ -- Server side processing
+ -- Could possibly tile
+ -- Draw red circles
+ -- Click events using JS
+ -- Smooth zooming, click for sites
+ TODO:
+ clicking
+ toolbar/full screen (no addr bar)
+ occassional crashes - because canvas is like a bitmap. May need to dynamically draw instead.
+ dynamic svg dimensions
+ 
+OpenLayers
+ 
+ -- Bitmaps on server - on the fly or dynamic?
+ -- Universal support
+ -- Harder to add custom interface (or easier?)
+ -- Not smooth zooming, render zoom levels
+ -- x-platform??
+ TODO:
+ load custom tiles
+ custom theme
+ tile svg -> bmp converter
+ 
+ ---------------------------
+ 
+ Need to test on: android, iphone, windows, blackberry
+ Do we need modernizr?
+ 
+ Location detection???
+ 
+ SEND REPORTS!!!

@@ -1,0 +1,77 @@
+{
+    "data": {
+        "CRSid": {
+            "description": "Common Registration Scheme ID", 
+            "value": "test0001"
+        }, 
+        "USN": {
+            "description": "University Student Number", 
+            "value": "301771236"
+        }, 
+        "name": {
+            "description": "Display Name", 
+            "value": "N. Simon"
+        }, 
+        "timetable": {
+            "description": "Timetable", 
+            "terms": [
+                {
+                    "description": "Term", 
+                    "examinations": [
+                        {
+                            "description": "Reading the Christian Bible (Exam)", 
+                            "end_datetime": "Mon, 30 May 2011 11:30:00 GMT", 
+                            "formatted_datetime": "30 May 2011  9:30AM - 12:30PM", 
+                            "icalendar_vevent_data": "BEGIN:VCALENDAR\r\nPRODID:-//The University of Cambridge//Exam Timetable//EN\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nDTSTART:20110530T083000Z\r\nDTEND:20110530T113000Z\r\nDTSTAMP:20120213T144805Z\r\nUID:bcdfbcee565111e196c8b72e205b60ab@cam.ac.uk\r\nSUMMARY:Reading the Christian Bible (Exam)\r\nDESCRIPTION:Reading the Christian Bible (Exam)\r\nLOCATION:Wesley House, Jesus Lane\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n", 
+                            "location": "Wesley House, Jesus Lane", 
+                            "start_datetime": "Mon, 30 May 2011 08:30:00 GMT", 
+                            "subject_area": {
+                                "description": "First Examination for the Bachelor of Theology for Ministry Degree", 
+                                "value": "TME1"
+                            }
+                        }, 
+                        {
+                            "description": "Introduction to New Testament (Exam)", 
+                            "end_datetime": "Tue, 31 May 2011 11:30:00 GMT", 
+                            "formatted_datetime": "31 May 2011  9:30AM - 12:30PM", 
+                            "icalendar_vevent_data": "BEGIN:VCALENDAR\r\nPRODID:-//The University of Cambridge//Exam Timetable//EN\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nDTSTART:20110531T083000Z\r\nDTEND:20110531T113000Z\r\nDTSTAMP:20120213T144805Z\r\nUID:bce06892565111e196c8b72e205b60ab@cam.ac.uk\r\nSUMMARY:Introduction to New Testament (Exam)\r\nDESCRIPTION:Introduction to New Testament (Exam)\r\nLOCATION:Wesley House, Jesus Lane\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n", 
+                            "location": "Wesley House, Jesus Lane", 
+                            "start_datetime": "Tue, 31 May 2011 08:30:00 GMT", 
+                            "subject_area": {
+                                "description": "First Examination for the Bachelor of Theology for Ministry Degree", 
+                                "value": "TME1"
+                            }
+                        }, 
+                        {
+                            "description": "Belief and practice in the ear (Exam)", 
+                            "end_datetime": "Wed, 01 Jun 2011 10:30:00 GMT", 
+                            "formatted_datetime": "01 June 2011  9:30AM - 11:30AM", 
+                            "icalendar_vevent_data": "BEGIN:VCALENDAR\r\nPRODID:-//The University of Cambridge//Exam Timetable//EN\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nDTSTART:20110601T083000Z\r\nDTEND:20110601T103000Z\r\nDTSTAMP:20120213T144805Z\r\nUID:bce13ab0565111e196c8b72e205b60ab@cam.ac.uk\r\nSUMMARY:Belief and practice in the ear (Exam)\r\nDESCRIPTION:Belief and practice in the ear (Exam)\r\nLOCATION:Wesley House, Jesus Lane\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n", 
+                            "location": "Wesley House, Jesus Lane", 
+                            "start_datetime": "Wed, 01 Jun 2011 08:30:00 GMT", 
+                            "subject_area": {
+                                "description": "First Examination for the Bachelor of Theology for Ministry Degree", 
+                                "value": "TME1"
+                            }
+                        }, 
+                        {
+                            "description": "Christian doctrine (2 hour wri (Exam)", 
+                            "end_datetime": "Thu, 02 Jun 2011 10:30:00 GMT", 
+                            "formatted_datetime": "02 June 2011  9:30AM - 11:30AM", 
+                            "icalendar_vevent_data": "BEGIN:VCALENDAR\r\nPRODID:-//The University of Cambridge//Exam Timetable//EN\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nDTSTART:20110602T083000Z\r\nDTEND:20110602T103000Z\r\nDTSTAMP:20120213T144805Z\r\nUID:bce21638565111e196c8b72e205b60ab@cam.ac.uk\r\nSUMMARY:Christian doctrine (2 hour wri (Exam)\r\nDESCRIPTION:Christian doctrine (2 hour wri (Exam)\r\nLOCATION:Wesley House, Jesus Lane\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n", 
+                            "location": "Wesley House, Jesus Lane", 
+                            "start_datetime": "Thu, 02 Jun 2011 08:30:00 GMT", 
+                            "subject_area": {
+                                "description": "First Examination for the Bachelor of Theology for Ministry Degree", 
+                                "value": "TME1"
+                            }
+                        }
+                    ], 
+                    "value": "Easter Term 2011"
+                }
+            ]
+        }
+    }, 
+    "status": "success", 
+    "version": "1.0"
+}

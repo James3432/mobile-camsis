@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no"
+          name="viewport" />
+    <title>CamSIS Mobile</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="Stylesheet" href="icons/icons.css" />
+  </head>
+  <body>
+    <div data-role="page">
+      <!--<div data-role="header" data-position="fixed">
+        <h1>
+          CamSIS - Home</h1>
+      </div>-->
+      <div data-role="content">
+	  <img src="images/camsis_logo.png" style="display:block; margin-left: auto; margin-right: auto; padding-top:25px; padding-bottom:25px;">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="info.htm">Student Info</a></li>
+			<li><a href="timetable.htm" data-ajax="false">Exam Timetable</a></li>
+			<li><a href="results.htm">Exam Results</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true">
+			<li><a href="map.htm">Map of Cambridge</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true">
+			<li><a href="http://www.camsis.cam.ac.uk/cam-only/log_in_students/">Desktop Site</a></li>
+		</ul>
+
+      </div>
+      <div data-id="footer" data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a class="info" href="info.htm" data-icon="custom">Info</a></li>
+            <li><a class="timetable" href="timetable.htm" data-icon="custom" data-ajax="false">Timetable</a></li>
+            <li><a class="results" href="results.htm" data-icon="custom">Results</a></li>
+            <li><a class="map" href="map.htm" data-icon="custom" data-ajax="false">Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    	<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>	
+    <script src="scripts/dal.js"></script>
+  </body>
+</html>

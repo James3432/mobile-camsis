@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <script src="fabric.js"></script>
+
+  </head>
+  <body>
+
+
+
+<script>
+  function toShape(objects, options) {
+    if (objects.length > 1) {
+      return new fabric.PathGroup(objects, options);
+    }
+    return objects[0];
+  }
+</script>
+
+<script>
+  function initCanvas(id) {
+    var canvas;
+    fabric.loadSVGFromURL('test.svg', function(objects, options) {
+      var shape = toShape(objects, options);
+      
+      var canvasEl = document.getElementById('c' + id);
+      
+      canvasEl.width = shape.width || 600;
+      canvasEl.height = shape.height || 600;
+      
+      var iframeEl = canvasEl.parentNode.nextSibling.childNodes[1];
+      if (iframeEl) {
+        iframeEl.style.width = canvasEl.width + 'px';
+        iframeEl.style.height = canvasEl.height + 'px';
+      }
+      
+      canvas = window['__canvas' + id] = new fabric.Canvas('c' + id, { selection: false });
+      
+      canvas.add(shape).centerObjectH(shape).centerObjectV(shape).renderAll();
+      shape.setCoords();
+      canvas.calcOffset();
+    });
+  }
+</script>
+
+<script>
+
+      document.write('<div class="test"><div class="block left"><p>Canvas #' + 1 + '</p>');
+      document.write('<canvas id="c' + 1 + '" width="600" height="600"></canvas></div>');
+      initCanvas(1);
+
+</script>
+    </div>
+  
+    <script>
+      (function(){
+        var mainScriptEl = document.getElementById('main');
+        if (!mainScriptEl) return;
+        var el = document.createElement('pre');
+        el.innerHTML = mainScriptEl.innerHTML;
+        el.lang = 'javascript';
+        el.className = 'prettyprint';
+        document.getElementById('bd-wrapper').appendChild(el);
+        prettyPrint();
+      })();
+    </script>
+  </body>
+</html>

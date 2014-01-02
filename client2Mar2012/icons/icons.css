@@ -1,0 +1,4 @@
+﻿.info .ui-icon { background:  url(info.png) 50% 50% no-repeat; background-size: 20px 20px; }
+.timetable .ui-icon { background:  url(calendar.png) 50% 50% no-repeat; background-size: 23px 25px; }
+.results .ui-icon { background:  url(result.png) 50% 50% no-repeat; background-size: 30px 24px; }
+.map .ui-icon { background:  url(globe.png) 50% 50% no-repeat; background-size: 20px 20px; }
